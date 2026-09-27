@@ -46,6 +46,7 @@
   --color-row-gain: #e6ffed;
   --color-row-loss: #fff1f0;
   --color-row-metabolic: #e6f7ff;
+  --color-row-stripe: #f4e5d5;
 
   --dur-fast: 200ms;
 
@@ -81,6 +82,7 @@
     --color-row-gain: #0a2010;
     --color-row-loss: #2a0a08;
     --color-row-metabolic: #0a1a2a;
+    --color-row-stripe: #221c15;
   }
 }
 
@@ -518,6 +520,23 @@ p:last-child { margin-bottom: 0; }
   font-family: var(--font-heading);
 }
 
+.article-page__body pre {
+  background-color: var(--color-bg-alt);
+  border-left: 3px solid var(--color-accent);
+  padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 2.5);
+  margin: calc(var(--spacing-unit) * 2) 0;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: var(--text-xs);
+  line-height: 1.65;
+  overflow-x: auto;
+}
+
+.article-page__body abbr[title] {
+  cursor: help;
+  text-decoration: underline dotted;
+  text-underline-offset: 0.15em;
+}
+
 /* Ready for when protocol.html content is migrated into the article wrapper */
 
 .protocol-box {
@@ -616,7 +635,7 @@ figcaption {
 }
 
 .biohack-table tr:nth-child(even) td {
-  background-color: var(--color-bg-alt);
+  background-color: var(--color-row-stripe);
 }
 
 .biohack-table .row-gain td { background-color: var(--color-row-gain); }

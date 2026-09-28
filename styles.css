@@ -467,7 +467,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .article-page .container {
-  max-width: 760px;
+  max-width: 960px;
 }
 
 .article-page__header {
@@ -654,7 +654,7 @@ figcaption {
 
 .biohack-table--fixed th:first-child,
 .biohack-table--fixed td:first-child {
-  width: 26%;
+  width: 8.5rem;
 }
 
 .caption-text {

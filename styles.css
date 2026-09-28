@@ -642,6 +642,27 @@ figcaption {
 .biohack-table .row-loss td { background-color: var(--color-row-loss); }
 .biohack-table .row-metabolic td { background-color: var(--color-row-metabolic); }
 
+.biohack-table th,
+.biohack-table td {
+  vertical-align: top;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  margin: calc(var(--spacing-unit) * 2) 0;
+}
+
+.biohack-table--fixed {
+  table-layout: fixed;
+  min-width: 34rem;
+  margin: 0;
+}
+
+.biohack-table--fixed th:first-child,
+.biohack-table--fixed td:first-child {
+  width: 20%;
+}
+
 .caption-text {
   font-size: var(--text-xs);
   color: var(--color-text-secondary);

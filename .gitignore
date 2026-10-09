@@ -1,9 +1,9 @@
 # macOS
 .DS_Store
 
-# Raw + processed video footage — too large for GitHub (1GB+, files exceed 100MB limit).
+# Raw video footage — files exceed GitHub's 100MB limit.
 # Back these up to an external drive or cloud storage, not the repo.
-media/
+/media/raw/
 
 # Local Claude Code tooling/config
 .claude/

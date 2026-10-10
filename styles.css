@@ -696,6 +696,38 @@ figcaption {
   top: -6.67%;
 }
 
+.coa-crop--tesa {
+  aspect-ratio: 790 / 253;
+}
+
+.coa-crop--tesa img {
+  width: 154.9%;
+  left: -28.1%;
+  top: -357.7%;
+}
+
+.coa-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--spacing-unit) * 4);
+  background: rgba(0, 0, 0, 0.85);
+  cursor: zoom-out;
+}
+
+.coa-lightbox[hidden] {
+  display: none;
+}
+
+.coa-lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 
 .biohack-table {
   width: 100%;

@@ -897,3 +897,20 @@ figcaption {
 
   @page { margin: 0.75in; }
 }
+
+/* Section permalinks */
+.section-link {
+  font-size: 0.75em;
+  margin-left: 0.15em;
+  text-decoration: none;
+  opacity: 0.45;
+  vertical-align: middle;
+}
+.section-link:hover,
+.section-link:focus {
+  opacity: 0.9;
+}
+
+section:has(.section-link) {
+  scroll-margin-top: 4ex;
+}

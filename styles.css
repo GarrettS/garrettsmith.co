@@ -914,3 +914,12 @@ figcaption {
 section:has(.section-link) {
   scroll-margin-top: 4ex;
 }
+
+.coa-crop--chromo {
+  aspect-ratio: 8 / 3.1;
+}
+.coa-crop--chromo img {
+  width: 100%;
+  left: 0;
+  top: 0;
+}

@@ -7,3 +7,6 @@
 
 # Local Claude Code tooling/config
 .claude/
+
+# Editorial style guide (working doc, not published)
+/writing-style.md

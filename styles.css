@@ -877,7 +877,8 @@ figcaption {
 
 @media print {
   .site-nav,
-  .site-footer { display: none; }
+  .site-footer,
+  .coa-lightbox { display: none; }
 
   .article-page {
     max-width: none;
@@ -894,6 +895,37 @@ figcaption {
     break-after: avoid-page;
     page-break-inside: avoid;
     page-break-after: avoid;
+  }
+
+  .article-page :is(figure, img, .coa-crop, table, tr,
+      .article-note, .article-disclaimer) {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .article-page figure > img {
+    display: block;
+    width: auto;
+    max-height: 7in;
+    object-fit: contain;
+  }
+
+  .article-page .coa-pair {
+    display: block;
+  }
+
+  .article-page figcaption {
+    break-before: avoid-page;
+    page-break-before: avoid;
+  }
+
+  .article-page thead {
+    display: table-header-group;
+  }
+
+  .article-page :is(p, li) {
+    orphans: 3;
+    widows: 3;
   }
 
   .article-page > article p { margin-bottom: 0.5rem; }

@@ -934,7 +934,33 @@ figcaption {
 
   .article-references { font-size: 9pt; }
 
+  .interrupted-flow > .flow-segment + .embedded-block {
+    break-before: avoid-page;
+    page-break-before: avoid;
+  }
+
+  .interrupted-flow > .embedded-block {
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+
   @page { margin: 0.75in; }
+}
+
+.interrupted-flow {
+  margin-block: calc(var(--spacing-unit) * 2);
+}
+
+.interrupted-flow > .embedded-block {
+  margin-block: calc(var(--spacing-unit) * 2);
+}
+
+.interrupted-flow > :is(ul, ol).embedded-block {
+  padding-inline-start: calc(var(--spacing-unit) * 4);
+}
+
+.interrupted-flow > blockquote.embedded-block {
+  margin-inline: calc(var(--spacing-unit) * 4);
 }
 
 /* Section permalinks */

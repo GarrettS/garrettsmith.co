@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DIY Injury Repair — Garrett Smith</title>
 <link rel="stylesheet" href="/styles.css">
+<script type="module" src="/scripts/image-lightbox.js"></script>
+<script type="module" src="/scripts/abbr-popover.js"></script>
 </head>
 <body>
 
@@ -197,21 +199,21 @@
           </aside>
 
           <figure>
-            <a class="coa-crop coa-crop--chromo" href="media/coa-tesa-chromatogram.png" title="Open the full certificate">
+            <a class="coa-crop coa-crop--chromo lightbox-link" href="media/coa-tesa-chromatogram.png" title="Open the full certificate">
               <img src="media/coa-tesa-chromatogram.png" alt="HPLC-UV chromatogram from a tesamorelin certificate of analysis, showing a single dominant tesamorelin peak at about 7.9 minutes on a flat baseline, at 99% chromatographic purity.">
             </a>
             <figcaption><strong>✅ Pass:</strong> A clean trace is one dominant peak — this tesamorelin COA (Peptidology, tested by Vanguard Laboratory, lot 1777) at 99% chromatographic purity by HPLC-UV.</figcaption>
           </figure>
 
-          <h3>Residual TFA</h3>
+          <h3>Residual <abbr title="trifluoroacetic acid">TFA</abbr></h3>
 
-          <p>Peptides purified with TFA are TFA salts, with residual TFA at 10% to 20% of the labeled weight. This reduces the amount and proportion of peptide, and can also reduce the peptide’s stability and shelf life. A vial sold as 10 mg of TFA salt may hold only 8 to 8.6 mg of actual peptide, so every dose calculated from the label is too low. The onus is on the buyer to source from a supplier whose third-party COA reports the net peptide content and residual TFA under 0.5%.</p>
+          <p>Peptides purified with <abbr title="trifluoroacetic acid">TFA</abbr> are TFA salts, and standard research peptides can retain 10% to 30% or more residual TFA by weight. That TFA counts in the labeled weight, so less of the vial is actual peptide. It also shortens the shelf life of the reconstituted solution and damages tissue at the injection site. A vial sold as 10 mg of TFA salt may hold as little as 7 mg of peptide, sometimes less, so every dose calculated from the label is too low. The onus is on the buyer to source from a supplier whose third-party COA reports the net peptide content and residual TFA under 0.5%.</p>
 
           <figure>
-            <a class="coa-crop coa-crop--tesa" href="media/coa-tesa-tfa.png" title="Open the full certificate">
+            <a class="coa-crop coa-crop--tesa lightbox-link" href="media/coa-tesa-tfa.png" title="Open the full certificate">
               <img src="media/coa-tesa-tfa.png" alt="Certificate of analysis testing trifluoroacetic acid by ion chromatography, result ND below 0.10%, circled.">
             </a>
-            <figcaption>A COA reporting TFA — Peptidology tesamorelin, tested by Vanguard Laboratory, lot 1777 — measured by ion chromatography at ND, below 0.10%.</figcaption>
+            <figcaption>A COA reporting <abbr title="trifluoroacetic acid">TFA</abbr> — Peptidology tesamorelin, tested by Vanguard Laboratory, lot 1777 — measured by ion chromatography at ND, below 0.10%.</figcaption>
           </figure>
         </section>
 
@@ -400,29 +402,16 @@
     </div>
   </footer>
 
-  <div id="coa-lightbox" class="coa-lightbox" hidden>
-    <img alt="">
-  </div>
-  <script>
-    (() => {
-      const box = document.getElementById('coa-lightbox');
-      if (!box) return;
-      const img = box.querySelector('img');
-      document.addEventListener('click', (e) => {
-        if (e.target === box) return (box.hidden = true);
-        const link = e.target.closest('a.coa-crop');
-        if (!link) return;
-        e.preventDefault();
-        const loader = new Image();
-        loader.onload = () => {
-          img.src = link.href;
-          box.hidden = false;
-        };
-        loader.src = link.href;
-      });
-      document.addEventListener('keydown', (e) => e.key === 'Escape' && !box.hidden && (box.hidden = true));
-    })();
-  </script>
+  <dialog class="image-lightbox image-lightbox--loading" aria-label="Image viewer">
+    <button type="button" class="image-lightbox__close" aria-label="Close image viewer">&times;</button>
+    <figure class="image-lightbox__figure">
+      <img class="image-lightbox__img" alt="">
+      <p class="image-lightbox__status" role="status" aria-live="polite"></p>
+      <a class="image-lightbox__original" target="_blank" rel="noopener noreferrer">Open original image</a>
+    </figure>
+  </dialog>
+
+  <div id="abbr-popover" role="tooltip" popover></div>
 
 </body>
 </html>

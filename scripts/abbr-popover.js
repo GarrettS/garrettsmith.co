@@ -59,6 +59,12 @@ function initAbbrPopover() {
       shouldShow(target) && showForAbbr(target));
   main.addEventListener('focusout', hidePopover);
 
+  // An outside tap or Escape closes the popover without firing hidePopover,
+  // so clear the description on any close.
+  popover.addEventListener('toggle', ({newState}) => {
+    if (newState === 'closed') undescribe(activeAbbr);
+  });
+
   if (matchMedia('(hover: hover)').matches) {
     main.addEventListener('mouseover', ({target}) =>
         shouldShow(target) && showForAbbr(target));
@@ -69,6 +75,11 @@ function initAbbrPopover() {
       undescribe(activeAbbr);
       popover.hidePopover();
     });
+  } else {
+    // A tap does not focus an abbr on iOS, and pointer events are not subject
+    // to the cursor-based clickable rule, so open on pointerup.
+    main.addEventListener('pointerup', ({target}) =>
+        shouldShow(target) && showForAbbr(target));
   }
 }
 

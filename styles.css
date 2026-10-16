@@ -808,7 +808,6 @@ abbr[title],
 abbr[data-title] {
   text-decoration: underline dotted;
   text-underline-offset: .15em;
-  cursor: help;
 }
 
 #abbr-popover {

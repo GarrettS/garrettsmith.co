@@ -35,3 +35,9 @@ Use `/web-xp` to load the standards. Use `/web-xp-check` to audit the diff. Use 
 Follow the editorial rules in `writing-style.md` (repo root) when drafting or editing any prose for the articles. It is the source of truth for voice, punctuation, and sourcing. Read it before writing.
 
 @writing-style.md
+
+## Before committing article prose
+
+Run a reading pass over the article prose you drafted or edited — judgment, not a script. Read `git diff` and check every passage you wrote or changed against `writing-style.md`. Start with the topic-sentence skim (read only the first sentence of each changed paragraph, in order, and confirm the claim is there), then check for colons or semicolons you introduced, truthiness qualifiers, empty "X, not Y" contrasts, metaphor where a literal verb works, vague wording where a specific word fits, and any study claim not scoped to what the paper did. Fix your prose, then commit.
+
+Scope it to prose you authored. Leave Garrett's own text alone — do not touch his colons, semicolons, or wording, even in the same diff. The pass enforces how you write, not how he writes.
